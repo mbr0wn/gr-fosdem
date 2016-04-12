@@ -1,0 +1,34 @@
+<block>
+  <name>Burst marker</name>
+  <key>fosdem_burst_marker</key>
+  <category>FOSDEM</category>
+  <import>import fosdem</import>
+  <make>fosdem.burst_marker($itemsize, $len_tag_key, $pad_zeros)</make>
+  <param>
+    <name>Itemsize</name>
+    <key>itemsize</key>
+    <value>gr.sizeof_gr_complex</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Len_tag_key</name>
+    <key>len_tag_key</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Pad_zeros</name>
+    <key>pad_zeros</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+    <vlen>$itemsize</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+    <vlen>$itemsize</vlen>
+  </source>
+</block>
